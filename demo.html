@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>仿淘宝套餐选择</title>
+    <link rel="stylesheet" href="./css/option-jquery-dc.css">
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/jquery-option-select.js"></script>
+</head>
+
+<body>
+    <div> <dt>Ajax调用（请通过 Web Server 访问）</dt>
+        <dd class="cb-prop testajax"></dd>
+    </div>
+</body>
+<script type="text/javascript">
+    var listObjAjax = new OptionList("testajax", "callFunc");
+    var url = "./jsondata.php";
+    listObjAjax.createListHtmlForAjax(url);
+    var callFunc = function(result) {}
+</script>
+
+</html>

@@ -1,0 +1,77 @@
+div dt {
+    margin: 0 auto;
+    margin-top: 2px;
+    margin-bottom: 15px;
+    width: 99%;
+    height: 25px;
+    border-bottom: 1px solid #f90;
+    background-color: #fef3e0;
+    font-size: 9pt;
+    line-height: 20px;
+}
+
+div {
+    float: left;
+    margin-bottom: 15px;
+    width: 80%;
+    border: 1px dashed #f60;
+}
+
+.cb-prop {
+    width: 290px;
+}
+
+.cb-prop ul {
+    width: 100%;
+}
+
+.cb-prop .cb-selected i {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: block;
+    overflow: hidden;
+    width: 9pt;
+    height: 9pt;
+    background-image: url(../image/selected.png);
+    background-position: -62px -16px;
+    /* 指定图片位置 */
+    background-repeat: no-repeat;
+    text-indent: -99em;
+}
+
+.cb-prop li {
+    position: relative;
+    float: left;
+    margin: 0 4px 4px 0;
+    padding: 1px;
+    background-color: #fff;
+    list-style: none;
+    vertical-align: middle;
+    line-height: 28px;
+}
+
+.cb-prop li i {
+    display: none;
+}
+
+.cb-prop li a {
+    display: block;
+    padding: 0 6px;
+    width: auto!important;
+    min-width: 10px;
+    border: 1px solid #e2e1e3;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 9pt;
+}
+
+.cb-prop li a:hover,
+.cb-prop li.cb-selected a,
+.cb-prop li.cb-selected a:hover {
+    margin: -1px;
+    border: 2px solid #df0001;
+}
