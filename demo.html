@@ -10,11 +10,35 @@
 </head>
 
 <body>
-    <div> <dt>Ajax调用（请通过 Web Server 访问）</dt>
+    <div>
+        <dt>本地模拟调用</dt>
+        <dd class="cb-prop testlocal"></dd>
+    </div>
+    <div>
+        <dt>Ajax调用（请通过 Web Server 访问）</dt>
         <dd class="cb-prop testajax"></dd>
     </div>
 </body>
 <script type="text/javascript">
+    /**
+     * 模拟JSON数据
+     * 
+     */
+    var nodesData = [
+        {
+            text:"套餐一",value:1,selected:true
+        },
+        {
+            text:"套餐二",value:2
+        },
+        {
+            text:"套餐三",value:3
+        }
+    ];
+    var localListObj = new OptionList("testlocal", "callFunc");
+    localListObj.createListHtml(nodesData);
+
+    // Ajax 调用
     var listObjAjax = new OptionList("testajax", "callFunc");
     var url = "./jsondata.php";
     listObjAjax.createListHtmlForAjax(url);
