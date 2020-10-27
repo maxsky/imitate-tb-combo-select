@@ -1,5 +1,7 @@
 # 仿淘宝套餐选择
 
+预览地址：[Product SKU select - codepen](https://codepen.io/maxsky/pen/oNLWgNp)
+
 支持 SKU 禁用判断，后端返回数据格式参考：
 
 ```json
@@ -51,4 +53,3 @@
     ]
 }
 ```
-
