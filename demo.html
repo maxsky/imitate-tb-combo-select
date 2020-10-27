@@ -1,48 +1,29 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <title>仿淘宝套餐选择</title>
-    <link rel="stylesheet" href="./css/option-jquery-dc.css">
-    <script src="./js/jquery.min.js"></script>
-    <script src="./js/jquery-option-select.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.staticfile.org/vue/2.6.9/vue.min.js"></script>
 </head>
 
 <body>
-    <div>
-        <dt>本地模拟调用</dt>
-        <dd class="cb-prop testlocal"></dd>
-    </div>
-    <div>
-        <dt>Ajax调用（请通过 Web Server 访问）</dt>
-        <dd class="cb-prop testajax"></dd>
-    </div>
+<div class="attrs">
+    <h1 align="center">展示区域</h1>
+    <dd class="cb-attrs">
+        <ul v-for="(attr, index) in attrs" :key="index">
+            <h2>{{attr.name}}</h2>
+            <li v-for="(option, i) in attr.options" :key="i"
+                :class="['value', {'selected': option.selected}]"
+                @click="handleSelect(attr, option.id)">
+                <a :class="{'enable': available.includes(option.id)}" href="javascript:void(0);">
+                    <span>{{option.name}} - {{option.id}}</span>
+                </a>
+                <i></i>
+            </li>
+        </ul>
+    </dd>
+</div>
 </body>
-<script type="text/javascript">
-    /**
-     * 模拟JSON数据
-     * 
-     */
-    var nodesData = [
-        {
-            text:"套餐一",value:1,selected:true
-        },
-        {
-            text:"套餐二",value:2
-        },
-        {
-            text:"套餐三",value:3
-        }
-    ];
-    var localListObj = new OptionList("testlocal", "callFunc");
-    localListObj.createListHtml(nodesData);
-
-    // Ajax 调用
-    var listObjAjax = new OptionList("testajax", "callFunc");
-    var url = "./jsondata.php";
-    listObjAjax.createListHtmlForAjax(url);
-    var callFunc = function(result) {}
-</script>
-
+<script src="./js/script.js"></script>
 </html>

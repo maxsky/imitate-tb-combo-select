@@ -1,7 +1,54 @@
 # 仿淘宝套餐选择
 
-<font size="4">**双击无法看到内容！**</font>
+支持 SKU 禁用判断，后端返回数据格式参考：
 
-Demo 使用 Ajax 调用
+```json
+{
+    "attrs": [{
+        "id": 1,
+        "name": "颜色",
+        "options": [{
+            "id": 1000,
+            "name": "黑色",
+            "selected": false
+        }, {
+            "id": 2000,
+            "name": "蓝色",
+            "selected": false
+        }]
+    }, {
+        "id": 2,
+        "name": "内存",
+        "options": [{
+            "id": 3000,
+            "name": "128G",
+            "selected": false
+        }, {
+            "id": 4000,
+            "name": "256G",
+            "selected": false
+        }]
+    }, {
+        "id": 3,
+        "name": "网络类型",
+        "options": [{
+            "id": 5000,
+            "name": "移动",
+            "selected": false
+        }, {
+            "id": 6000,
+            "name": "联通",
+            "selected": false
+        }]
+    }],
+    "sku_list": [
+        [1000, 3000, 5000],
+        [1000, 4000, 5000],
+        [1000, 4000, 6000],
+        [2000, 3000, 5000],
+        [2000, 4000, 5000],
+        [2000, 4000, 6000]
+    ]
+}
+```
 
-放置于 Web Server 中访问，phpStudy 或 WAMP。目前仅提供 PHP 的数据，其它 Server 参考一下
